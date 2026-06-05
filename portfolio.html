@@ -11,20 +11,24 @@
     <section class="slide slide--hero" id="slide1">
       <div class="slide__content hero-layout">
         <div class="hero-text">
-          <span class="greeting">Hello, I'm</span>
           <h1 class="name">Erick Mitemah</h1>
           <p class="university">University of Eldoret</p>
-          <p class="tagline">Machine Learning · Sports Analytics · Network Security</p>
+          <p class="tagline">ML Engineer · Network Administrator</p>
           <div class="languages">
             <span class="lang-badge">Python</span>
-            <span class="lang-badge">HTML</span>
+            <span class="lang-badge">C#</span>
             <span class="lang-badge">JavaScript</span>
           </div>
         </div>
         <div class="hero-photo">
           <div class="photo-frame">
             <img src="your-photo.jpg" alt="Erick Mitemah portrait" class="profile-pic" id="profileImage">
-            <div class="upload-hint">📷 Your photo here</div>
+            <div class="upload-hint" id="uploadHint">📷 Your photo here</div>
+          </div>
+          <div class="upload-controls">
+            <label for="photoUpload" class="upload-button">Upload your photo</label>
+            <input type="file" id="photoUpload" accept="image/*" class="photo-input">
+          
           </div>
         </div>
       </div>
@@ -56,34 +60,13 @@
             <span class="tech-tag">HTML · JavaScript (vis)</span>
           </div>
         </div>
+        <div class="page-action">
+          <a href="contact.html" class="page-link">Contact me</a>
+        </div>
       </div>
       <div class="slide-nav dual-nav">
         <a href="#slide1" class="nav-arrow" aria-label="Previous slide">↑</a>
-        <a href="#slide3" class="nav-arrow" aria-label="Next slide">↓</a>
-      </div>
-    </section>
-
-    <section class="slide slide--contact" id="slide3">
-      <div class="slide__content">
-        <h2 class="section-title">📞 Get in touch</h2>
-        <div class="contact-card">
-          <div class="contact-item">
-            <span class="contact-label">Phone</span>
-            <a href="tel:+254716750785" class="contact-value">0716750785</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">Email</span>
-            <a href="mailto:erick.mitemah@example.com" class="contact-value">erick.mitemah@eldoret.ac.ke</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">Location</span>
-            <span class="contact-value">Eldoret, Kenya</span>
-          </div>
-        </div>
-        <p class="contact-footer">I’m always open to collaborations in machine learning and analytics.</p>
-      </div>
-      <div class="slide-nav">
-        <a href="#slide2" class="nav-arrow" aria-label="Previous slide">↑</a>
+        <a href="contact.html" class="nav-arrow" aria-label="Contact page">✉️</a>
       </div>
     </section>
   </main>
