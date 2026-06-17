@@ -40,12 +40,18 @@
             </div>
             <div class="hero-photo hero-photo--compact">
               <div class="photo-frame">
+                <!-- Replace the src value below with your image URL when you want to show your photo -->
                 <img src="your-photo.svg" alt="Erick Mitemah portrait" class="profile-pic" id="profileImage">
                 <div class="upload-hint" id="uploadHint">📷 Upload your photo here</div>
               </div>
               <div class="upload-controls">
                 <label for="photoUpload" class="upload-button">Upload</label>
                 <input type="file" id="photoUpload" accept="image/*" class="photo-input">
+              </div>
+              <div class="photo-link">
+                <input id="photoUrlInput" type="url" placeholder="Paste image URL here" />
+                <button id="photoUrlButton" class="upload-button">Use URL</button>
+                <button id="clearPhotoButton" class="upload-button button--ghost" type="button">Clear</button>
               </div>
             </div>
           </div>

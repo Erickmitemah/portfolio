@@ -3,7 +3,45 @@
 
   const uploadInput = document.getElementById('photoUpload');
   const uploadHint = document.getElementById('uploadHint');
+  const photoUrlInput = document.getElementById('photoUrlInput');
+  const photoUrlButton = document.getElementById('photoUrlButton');
+  const clearPhotoButton = document.getElementById('clearPhotoButton');
   let currentObjectUrl = null;
+
+  function saveProfilePhoto(src) {
+    if (typeof src === 'string') {
+      localStorage.setItem('profilePhoto', src);
+    }
+  }
+
+  function clearProfilePhoto() {
+    localStorage.removeItem('profilePhoto');
+    if (profileImg) {
+      profileImg.src = 'your-photo.svg';
+      profileImg.style.display = 'block';
+    }
+    if (uploadHint) {
+      uploadHint.textContent = '📷 Upload your photo here';
+      uploadHint.style.display = 'block';
+    }
+  }
+
+  function setProfilePhoto(src, persist = true) {
+    if (!profileImg) return;
+    profileImg.src = src;
+    profileImg.style.display = 'block';
+    if (uploadHint) uploadHint.style.display = 'none';
+    if (persist) saveProfilePhoto(src);
+  }
+
+  function loadSavedProfilePhoto() {
+    const saved = localStorage.getItem('profilePhoto');
+    if (saved && profileImg) {
+      profileImg.src = saved;
+      profileImg.style.display = 'block';
+      if (uploadHint) uploadHint.style.display = 'none';
+    }
+  }
 
   if (profileImg) {
     profileImg.addEventListener('error', function() {
@@ -29,15 +67,33 @@
         return;
       }
 
-      if (currentObjectUrl) {
-        URL.revokeObjectURL(currentObjectUrl);
-      }
-
-      currentObjectUrl = URL.createObjectURL(file);
-      profileImg.src = currentObjectUrl;
-      profileImg.style.display = 'block';
+      const reader = new FileReader();
+      reader.onload = function(loadEvent) {
+        const dataUrl = loadEvent.target.result;
+        setProfilePhoto(dataUrl);
+      };
+      reader.readAsDataURL(file);
     });
   }
+
+  if (photoUrlButton && photoUrlInput) {
+    photoUrlButton.addEventListener('click', function() {
+      const url = photoUrlInput.value.trim();
+      if (!url) {
+        return;
+      }
+      setProfilePhoto(url);
+    });
+  }
+
+  if (clearPhotoButton) {
+    clearPhotoButton.addEventListener('click', function() {
+      clearProfilePhoto();
+      if (photoUrlInput) photoUrlInput.value = '';
+    });
+  }
+
+  loadSavedProfilePhoto();
 
   // Local fallback data (used when the API is unavailable)
   const localProjects = {
