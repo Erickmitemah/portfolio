@@ -7,65 +7,96 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="site-header">
+    <a href="portfolio.html" class="brand">Erick Mitemah</a>
+    <nav class="site-nav">
+      <a href="#slide1">Home</a>
+      <a href="#slide2">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="social-links">
+      <a class="social-link" href="https://instagram.com/yourusername" target="_blank" rel="noreferrer noopener" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.4a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/></svg>
+        <span class="social-label">Instagram</span>
+      </a>
+      <a class="social-link" href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.75 3.5A2.25 2.25 0 1 0 3.5 5.75 2.25 2.25 0 0 0 5.75 3.5Zm.25 3.25H4.5v12h1.5v-12Zm5.5 0h-1.45v12h1.5v-6.2c0-1.86 2.2-2.01 2.2 0v6.2h1.5v-6.7c0-3.55-3.75-3.42-4.75-1.68V6.75Z"/></svg>
+        <span class="social-label">LinkedIn</span>
+      </a>
+      <a class="social-link" href="https://wa.me/254716750785?text=Hi%20Erick%2C%20my%20name%20is%20%5BYour%20Name%5D" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.04a9.96 9.96 0 0 0-8.47 15.4l-1.02 3.73 3.84-1.01A9.95 9.95 0 1 0 12 2.04Zm0 1.5a8.45 8.45 0 0 1 6.03 14.34l-.44.45-.27.25-2.25.6.58-2.15-.18-.28A8.45 8.45 0 1 1 12 3.54Zm1.98 3.45c-.44 0-.86.11-1.24.17-.33.05-.65.1-.95.22-.18.08-.35.19-.52.28-.17.1-.34.2-.5.33-.13.1-.23.2-.34.33-.2.26-.35.56-.6.78-.22.21-.42.43-.62.67-.14.17-.16.32-.13.52.06.3.15.6.24.89.09.2.22.38.34.57.11.18.23.35.34.53.1.17.2.35.3.52.18.28.33.59.54.87.1.14.2.27.28.42.12.21.2.42.33.62.14.23.28.45.42.67.1.14.19.27.29.4.1.13.2.26.3.4.03.04.05.1.1.12.09.06.24.03.35-.01.27-.09.48-.3.73-.45.13-.08.28-.15.41-.23.25-.14.47-.29.72-.44.17-.11.34-.22.52-.33.26-.16.55-.23.84-.34.23-.1.45-.21.69-.28.18-.05.35-.08.53-.12.12-.03.23-.03.35-.03.16 0 .27.04.39.17.12.13.18.31.18.49s-.05.35-.14.52c-.08.15-.2.3-.32.45-.1.12-.22.22-.34.31a10.4 10.4 0 0 1-1.2.82c-.28.16-.58.31-.88.44-.17.07-.34.13-.52.18-.45.1-.91.19-1.38.2-.12 0-.23 0-.35-.02-.19-.03-.29-.08-.38-.23-.08-.12-.1-.25-.1-.38 0-.08.01-.16.03-.24.05-.3.13-.6.23-.89.07-.18.16-.35.25-.52.11-.25.26-.49.45-.71.08-.1.17-.2.26-.3.11-.12.21-.23.33-.34.18-.16.38-.29.57-.42.13-.09.26-.18.39-.27.31-.2.63-.4.94-.6.18-.11.35-.24.53-.35.16-.1.31-.21.48-.3.19-.11.4-.2.6-.29.16-.07.33-.12.5-.2a1.1 1.1 0 0 0 .51-.36c.1-.12.1-.28.04-.42a.98.98 0 0 0-.46-.48c-.18-.08-.38-.1-.57-.1Z"/></svg>
+      </a>
+    </div>
+  </header>
+
   <main class="portfolio-slider">
     <section class="slide slide--hero" id="slide1">
       <div class="slide__content hero-layout">
         <div class="hero-text">
-          <h1 class="name">Erick Mitemah</h1>
-          <p class="university">University of Eldoret</p>
-          <p class="tagline">ML Engineer · Network Administrator</p>
-          <div class="languages">
-            <span class="lang-badge">Python</span>
-            <span class="lang-badge">C#</span>
-            <span class="lang-badge">JavaScript</span>
+          <div class="hero-heading">
+            <div>
+              <p class="eyebrow">Machine learning · Network security · Web design</p>
+              <h1 class="name">Hi, I’m Erick.</h1>
+            </div>
+            <div class="hero-photo hero-photo--compact">
+              <div class="photo-frame">
+                <img src="your-photo.jpg" alt="Erick Mitemah portrait" class="profile-pic" id="profileImage">
+                <div class="upload-hint" id="uploadHint">📷 Upload your photo here</div>
+              </div>
+              <div class="upload-controls">
+                <label for="photoUpload" class="upload-button">Upload</label>
+                <input type="file" id="photoUpload" accept="image/*" class="photo-input">
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="hero-photo">
-          <div class="photo-frame">
-            <img src="your-photo.jpg" alt="Erick Mitemah portrait" class="profile-pic" id="profileImage">
-            <div class="upload-hint" id="uploadHint">📷 Your photo here</div>
+          <p class="hero-copy">I design intelligent systems that blend secure networking, machine learning, and polished user experiences.</p>
+          <div class="hero-meta">
+            <span class="hero-pill">University of Eldoret</span>
+            <span class="hero-pill">Python · C# · JavaScript</span>
           </div>
-          <div class="upload-controls">
-            <label for="photoUpload" class="upload-button">Upload your photo</label>
-            <input type="file" id="photoUpload" accept="image/*" class="photo-input">
-          
+          <div class="hero-actions">
+            <a href="contact.html" class="button button--primary">Let’s collaborate</a>
+            <a href="#slide2" class="button button--ghost">See projects</a>
           </div>
         </div>
       </div>
       <div class="slide-nav">
-        <a href="#slide2" class="nav-arrow" aria-label="Next slide">↓</a>
+        <a href="#slide2" class="nav-arrow" aria-label="Next section">↓</a>
       </div>
     </section>
 
     <section class="slide slide--projects" id="slide2">
       <div class="slide__content">
-        <h2 class="section-title">🚀 Projects I pursue</h2>
+        <div class="section-heading">
+          <h2 class="section-title">Featured projects</h2>
+          <p class="section-copy">A few recent initiatives where I combined ML, security, and intuitive interfaces.</p>
+        </div>
         <div class="projects-grid">
-          <div class="project-card">
+          <a class="project-card" href="project.html?project=sports-analytics">
             <div class="project-icon">⚽</div>
             <h3>Sports Analytics</h3>
             <p>Machine learning models for player performance, match outcome prediction, and tactical insights using real-world datasets.</p>
             <span class="tech-tag">Python · Scikit‑learn</span>
-          </div>
-          <div class="project-card">
+          </a>
+          <a class="project-card" href="project.html?project=network-intrusion">
             <div class="project-icon">🛡️</div>
             <h3>Network Intrusion System</h3>
             <p>Anomaly detection and intrusion prevention using supervised and unsupervised learning on network traffic data.</p>
             <span class="tech-tag">Python · TensorFlow</span>
-          </div>
-          <div class="project-card">
+          </a>
+          <a class="project-card" href="project.html?project=ml-research">
             <div class="project-icon">🧠</div>
             <h3>ML Research</h3>
             <p>Exploring deep learning architectures for image recognition and natural language processing in security contexts.</p>
             <span class="tech-tag">HTML · JavaScript (vis)</span>
-          </div>
+          </a>
         </div>
         <div class="page-action">
           <a href="contact.html" class="page-link">Contact me</a>
         </div>
       </div>
       <div class="slide-nav dual-nav">
-        <a href="#slide1" class="nav-arrow" aria-label="Previous slide">↑</a>
+        <a href="#slide1" class="nav-arrow" aria-label="Previous section">↑</a>
         <a href="contact.html" class="nav-arrow" aria-label="Contact page">✉️</a>
       </div>
     </section>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Contact · Erick Mitemah</title>
+  <title>Project detail · Erick Mitemah</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +11,8 @@
     <a href="portfolio.html" class="brand">Erick Mitemah</a>
     <nav class="site-nav">
       <a href="portfolio.html">Portfolio</a>
-      <a href="#contact">Contact</a>
+      <a href="project.html?project=sports-analytics">Project</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="social-links">
       <a class="social-link" href="https://instagram.com/yourusername" target="_blank" rel="noreferrer noopener" aria-label="Instagram" title="Instagram">
@@ -22,44 +23,50 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.75 3.5A2.25 2.25 0 1 0 3.5 5.75 2.25 2.25 0 0 0 5.75 3.5Zm.25 3.25H4.5v12h1.5v-12Zm5.5 0h-1.45v12h1.5v-6.2c0-1.86 2.2-2.01 2.2 0v6.2h1.5v-6.7c0-3.55-3.75-3.42-4.75-1.68V6.75Z"/></svg>
         <span class="social-label">LinkedIn</span>
       </a>
-      <a class="social-link" href="https://wa.me/254716750785?text=Hi%20Erick%2C%20my%20name%20is%20%5BYour%20Name%5D" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp" title="WhatsApp">
+      <a class="social-link" href="https://wa.me/254712345678?text=Hi%20Erick%2C%20my%20name%20is%20%5BYour%20Name%5D" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp" title="WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.04a9.96 9.96 0 0 0-8.47 15.4l-1.02 3.73 3.84-1.01A9.95 9.95 0 1 0 12 2.04Zm0 1.5a8.45 8.45 0 0 1 6.03 14.34l-.44.45-.27.25-2.25.6.58-2.15-.18-.28A8.45 8.45 0 1 1 12 3.54Zm1.98 3.45c-.44 0-.86.11-1.24.17-.33.05-.65.10-.95.22-.18.08-.35.19-.52.28-.17.10-.34.20-.50.33-.13.10-.23.20-.34.33-.20.26-.35.56-.60.78-.22.21-.42.43-.62.67-.14.17-.16.32-.13.52.06.30.15.60.24.89.09.20.22.38.34.57.11.18.23.35.34.53.10.17.20.35.30.52.18.28.33.59.54.87.10.14.20.27.28.42.12.21.20.42.33.62.14.23.28.45.42.67.10.14.19.27.29.40.10.13.20.26.30.40.03.04.05.10.10.12.09.06.24.03.35-.01.27-.09.48-.30.73-.45.13-.08.28-.15.41-.23.25-.14.47-.29.72-.44.17-.11.34-.22.52-.33.26-.16.55-.23.84-.34.23-.10.45-.21.69-.28.18-.05.35-.08.53-.12.12-.03.23-.03.35-.03.16 0 .27.04.39.17.12.13.18.31.18.49s-.05.35-.14.52c-.08.15-.20.30-.32.45-.10.12-.22.22-.34.31a10.4 10.4 0 0 1-1.2.82c-.28.16-.58.31-.88.44-.17.07-.34.13-.52.18-.45.10-.91.19-1.38.20-.12 0-.23 0-.35-.02-.19-.03-.29-.08-.38-.23-.08-.12-.10-.25-.10-.38 0-.08.01-.16.03-.24.05-.30.13-.60.23-.89.07-.18.16-.35.25-.52.11-.25.26-.49.45-.71.08-.10.17-.20.26-.30.11-.12.21-.23.33-.34.18-.16.38-.29.57-.42.13-.09.26-.18.39-.27.31-.20.63-.40.94-.60.18-.11.35-.24.53-.35.16-.10.31-.21.48-.30.19-.11.40-.20.60-.29.16-.07.33-.12.50-.20a1.1 1.1 0 0 0 .51-.36c.10-.12.10-.28.04-.42a.98.98 0 0 0-.46-.48c-.18-.08-.38-.10-.57-.10Z"/></svg>
-        <span class="social-label">WhatsApp</span>
       </a>
     </div>
   </header>
 
   <main class="portfolio-slider">
-    <section class="slide slide--contact" id="contact">
-      <div class="slide__content contact-panel">
+    <section class="slide slide--projects">
+      <div class="slide__content project-detail">
         <div class="section-heading">
-          <h2 class="section-title">📞 Let’s connect</h2>
-          <p class="section-copy">Reach out for collaborations, ML projects, or networking work.</p>
+          <p class="eyebrow">Project showcase</p>
+          <h2 class="section-title" id="projectTitle">Project details</h2>
+          <p class="section-copy" id="projectSummary">Select a project from the portfolio to see its screenshot, tools, and record of work.</p>
         </div>
-        <div class="contact-card">
-          <div class="contact-item">
-            <span class="contact-label">Phone</span>
-            <a href="tel:+254716750785" class="contact-value">0716750785</a>
+        <div class="project-detail-grid">
+          <div class="project-screenshot">
+            <div class="screenshot-frame">
+              <img id="projectScreenshot" src="" alt="Project screenshot" style="display: none;" />
+              <div class="screenshot-placeholder" id="screenshotPlaceholder">
+                Add a screenshot file to the project folder and name it as shown in the project detail record. If you want, you can replace this placeholder with a real image.
+              </div>
+            </div>
           </div>
-          <div class="contact-item">
-            <span class="contact-label">Email</span>
-            <a href="mailto:erickmitemah@gmail.com" class="contact-value">erickmitemah@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">WhatsApp</span>
-            <a href="https://wa.me/254716750785?text=Hi%20Erick%2C%20my%20name%20is%20%5BYour%20Name%5D" class="contact-value" target="_blank" rel="noreferrer noopener">+254 716 750 785</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">Location</span>
-            <span class="contact-value">Eldoret, Kenya</span>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-pill" id="projectCategory"></span>
+              <span class="project-pill" id="projectRole"></span>
+              <span class="project-pill" id="projectTech"></span>
+            </div>
+            <div class="project-records">
+              <h3>Work record</h3>
+              <ul id="projectRecords">
+                <li>Open the portfolio and select a project to view results here.</li>
+              </ul>
+            </div>
+            <div class="page-action">
+              <a href="portfolio.html" class="button button--ghost">Back to portfolio</a>
+            </div>
           </div>
         </div>
-        <p class="contact-footer">I’m always open to collaborations in machine learning and web designing.</p>
-      </div>
-      <div class="slide-nav">
-        <a href="portfolio.html" class="nav-arrow" aria-label="Back to portfolio">←</a>
       </div>
     </section>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

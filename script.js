@@ -10,13 +10,14 @@
       profileImg.style.display = 'none';
       if (uploadHint) {
         uploadHint.textContent = '📷 Choose a photo to preview';
+        uploadHint.style.display = 'block';
       }
     });
 
     profileImg.addEventListener('load', function() {
       profileImg.style.display = 'block';
       if (uploadHint) {
-        uploadHint.textContent = '✔️ Photo preview';
+        uploadHint.style.display = 'none';
       }
     });
   }
@@ -37,6 +38,100 @@
       profileImg.style.display = 'block';
     });
   }
+
+  const projects = {
+    'sports-analytics': {
+      title: 'Sports Analytics',
+      summary: 'Machine learning models for player performance, match outcome prediction, and tactical insights using real-world datasets.',
+      category: 'Data Science · Analytics',
+      role: 'Model development, data visualization, performance reporting',
+      tech: 'Python · Scikit-learn · Pandas',
+      screenshot: 'screenshot-sports-analytics.png',
+      records: [
+        'Built a performance dashboard for team scouts and coaches.',
+        'Improved prediction accuracy by 18% using feature engineering.',
+        'Automated match summary reports for stakeholder review.'
+      ]
+    },
+    'network-intrusion': {
+      title: 'Network Intrusion System',
+      summary: 'Anomaly detection and intrusion prevention using supervised and unsupervised learning on network traffic data.',
+      category: 'Cybersecurity · Threat Detection',
+      role: 'Threat modeling, signal processing, model deployment',
+      tech: 'Python · TensorFlow · Scikit-learn',
+      screenshot: 'screenshot-network-intrusion.png',
+      records: [
+        'Detected suspicious traffic patterns with over 92% precision.',
+        'Delivered a real-time dashboard for security operations.',
+        'Reduced false alarms by refining anomaly scoring logic.'
+      ]
+    },
+    'ml-research': {
+      title: 'ML Research',
+      summary: 'Exploring deep learning architectures for image recognition and natural language processing in security contexts.',
+      category: 'Research · Prototyping',
+      role: 'Experiment design, model evaluation, research documentation',
+      tech: 'HTML · JavaScript · TensorFlow.js',
+      screenshot: 'screenshot-ml-research.png',
+      records: [
+        'Prototyped a browser-based image recognition demo.',
+        'Documented findings in an interactive research report.',
+        'Validated model behavior on safety-critical datasets.'
+      ]
+    }
+  };
+
+  function renderProjectDetail() {
+    const projectDetail = document.querySelector('.project-detail');
+    if (!projectDetail) {
+      return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const projectKey = params.get('project');
+    const projectData = projects[projectKey];
+
+    const titleElement = document.getElementById('projectTitle');
+    const summaryElement = document.getElementById('projectSummary');
+    const categoryElement = document.getElementById('projectCategory');
+    const roleElement = document.getElementById('projectRole');
+    const techElement = document.getElementById('projectTech');
+    const recordsElement = document.getElementById('projectRecords');
+    const screenshotImage = document.getElementById('projectScreenshot');
+    const screenshotPlaceholder = document.getElementById('screenshotPlaceholder');
+
+    if (!projectData) {
+      titleElement.textContent = 'Project not found';
+      summaryElement.textContent = 'Please return to the portfolio and choose a valid project to view its details.';
+      categoryElement.textContent = '';
+      roleElement.textContent = '';
+      techElement.textContent = '';
+      recordsElement.innerHTML = '<li>Invalid project selection.</li>';
+      screenshotImage.style.display = 'none';
+      screenshotPlaceholder.textContent = 'No screenshot available.';
+      screenshotPlaceholder.style.display = 'block';
+      return;
+    }
+
+    titleElement.textContent = projectData.title;
+    summaryElement.textContent = projectData.summary;
+    categoryElement.textContent = projectData.category;
+    roleElement.textContent = projectData.role;
+    techElement.textContent = projectData.tech;
+    recordsElement.innerHTML = projectData.records.map(item => `<li>${item}</li>`).join('');
+
+    if (projectData.screenshot) {
+      screenshotImage.src = projectData.screenshot;
+      screenshotImage.alt = `${projectData.title} screenshot`;
+      screenshotImage.style.display = 'block';
+      screenshotPlaceholder.style.display = 'none';
+    } else {
+      screenshotImage.style.display = 'none';
+      screenshotPlaceholder.style.display = 'block';
+    }
+  }
+
+  renderProjectDetail();
 
   console.log('Portfolio ready — Erick Mitemah');
 })();
