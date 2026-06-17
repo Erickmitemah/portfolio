@@ -47,7 +47,7 @@
       category: 'Data Science · Analytics',
       role: 'Model development, data visualization, performance reporting',
       tech: 'Python · Scikit-learn · Pandas',
-      screenshot: 'screenshot-sports-analytics.png',
+      screenshot: 'screenshot-sports-analytics.svg',
       records: [
         'Built a performance dashboard for team scouts and coaches.',
         'Improved prediction accuracy by 18% using feature engineering.',
@@ -60,7 +60,7 @@
       category: 'Cybersecurity · Threat Detection',
       role: 'Threat modeling, signal processing, model deployment',
       tech: 'Python · TensorFlow · Scikit-learn',
-      screenshot: 'screenshot-network-intrusion.png',
+      screenshot: 'screenshot-network-intrusion.svg',
       records: [
         'Detected suspicious traffic patterns with over 92% precision.',
         'Delivered a real-time dashboard for security operations.',
@@ -73,7 +73,7 @@
       category: 'Research · Prototyping',
       role: 'Experiment design, model evaluation, research documentation',
       tech: 'HTML · JavaScript · TensorFlow.js',
-      screenshot: 'screenshot-ml-research.png',
+      screenshot: 'screenshot-ml-research.svg',
       records: [
         'Prototyped a browser-based image recognition demo.',
         'Documented findings in an interactive research report.',

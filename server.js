@@ -12,6 +12,11 @@ app.use(express.json());
 // Serve static files from project root
 app.use(express.static(path.join(__dirname)));
 
+// Serve portfolio.html at root for convenience
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'portfolio.html'));
+});
+
 const projects = {
   'sports-analytics': {
     title: 'Sports Analytics',
@@ -19,7 +24,7 @@ const projects = {
     category: 'Data Science · Analytics',
     role: 'Model development, data visualization, performance reporting',
     tech: 'Python · Scikit-learn · Pandas',
-    screenshot: 'screenshot-sports-analytics.png',
+    screenshot: 'screenshot-sports-analytics.svg',
     records: [
       'Built a performance dashboard for team scouts and coaches.',
       'Improved prediction accuracy by 18% using feature engineering.',
@@ -32,7 +37,7 @@ const projects = {
     category: 'Cybersecurity · Threat Detection',
     role: 'Threat modeling, signal processing, model deployment',
     tech: 'Python · TensorFlow · Scikit-learn',
-    screenshot: 'screenshot-network-intrusion.png',
+    screenshot: 'screenshot-network-intrusion.svg',
     records: [
       'Detected suspicious traffic patterns with over 92% precision.',
       'Delivered a real-time dashboard for security operations.',
@@ -45,7 +50,7 @@ const projects = {
     category: 'Research · Prototyping',
     role: 'Experiment design, model evaluation, research documentation',
     tech: 'HTML · JavaScript · TensorFlow.js',
-    screenshot: 'screenshot-ml-research.png',
+    screenshot: 'screenshot-ml-research.svg',
     records: [
       'Prototyped a browser-based image recognition demo.',
       'Documented findings in an interactive research report.',
@@ -94,4 +99,9 @@ app.post('/api/contact', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
+});
+
+// Fallback 404 for unknown routes
+app.use((req, res) => {
+  res.status(404).send('Not found');
 });
