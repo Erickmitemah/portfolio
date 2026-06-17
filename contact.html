@@ -54,6 +54,25 @@
             <span class="contact-value">Eldoret, Kenya</span>
           </div>
         </div>
+        <form id="contactForm" class="contact-form" method="post">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write a short message"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="button button--primary">Send message</button>
+            <span id="contactStatus" aria-live="polite"></span>
+          </div>
+        </form>
+
         <p class="contact-footer">I’m always open to collaborations in machine learning and web designing.</p>
       </div>
       <div class="slide-nav">

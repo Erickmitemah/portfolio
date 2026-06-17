@@ -157,5 +157,44 @@
 
   renderProjectDetail();
 
+  // Contact form submission handler
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const statusEl = document.getElementById('contactStatus');
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!message) {
+        if (statusEl) statusEl.textContent = 'Please enter a message.';
+        return;
+      }
+
+      if (statusEl) {
+        statusEl.textContent = 'Sending…';
+      }
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message })
+        });
+
+        if (res.ok) {
+          if (statusEl) statusEl.textContent = 'Message sent — thanks!';
+          contactForm.reset();
+        } else {
+          const data = await res.json().catch(() => ({}));
+          if (statusEl) statusEl.textContent = data.error || 'Failed to send message.';
+        }
+      } catch (err) {
+        if (statusEl) statusEl.textContent = 'Network error — try again later.';
+      }
+    });
+  }
+
   console.log('Portfolio ready — Erick Mitemah');
 })();
