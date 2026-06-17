@@ -39,7 +39,8 @@
     });
   }
 
-  const projects = {
+  // Local fallback data (used when the API is unavailable)
+  const localProjects = {
     'sports-analytics': {
       title: 'Sports Analytics',
       summary: 'Machine learning models for player performance, match outcome prediction, and tactical insights using real-world datasets.',
@@ -89,7 +90,28 @@
 
     const params = new URLSearchParams(window.location.search);
     const projectKey = params.get('project');
-    const projectData = projects[projectKey];
+    // Try fetching project data from the API, fallback to local data if the request fails
+    async function loadAndRender() {
+      let projectData = null;
+      if (projectKey) {
+        try {
+          const res = await fetch(`/api/projects/${encodeURIComponent(projectKey)}`);
+          if (res.ok) {
+            projectData = await res.json();
+          }
+        } catch (err) {
+          console.warn('API request failed, using local data', err);
+        }
+      }
+
+      if (!projectData) {
+        projectData = localProjects[projectKey];
+      }
+
+      applyProjectData(projectData);
+    }
+
+    function applyProjectData(projectData) {
 
     const titleElement = document.getElementById('projectTitle');
     const summaryElement = document.getElementById('projectSummary');
@@ -112,7 +134,6 @@
       screenshotPlaceholder.style.display = 'block';
       return;
     }
-
     titleElement.textContent = projectData.title;
     summaryElement.textContent = projectData.summary;
     categoryElement.textContent = projectData.category;
@@ -129,6 +150,9 @@
       screenshotImage.style.display = 'none';
       screenshotPlaceholder.style.display = 'block';
     }
+  }
+
+    loadAndRender();
   }
 
   renderProjectDetail();
